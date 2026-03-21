@@ -1,4 +1,4 @@
-# Portfolio 2025 — Yudha Pradana
+# Portfolio 2025 — Sanz
 
 A full-stack portfolio built with React + TypeScript (frontend) and Node.js + Express + TypeScript (backend), powered by Supabase.
 
