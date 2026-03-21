@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Environment files — NEVER commit these
+.env
+.env.production
+.env.local
+
+# Vite
+frontend/dist/
+frontend/.vite/
+
+# Misc
+.DS_Store
+*.log
