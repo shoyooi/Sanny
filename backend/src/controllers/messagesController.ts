@@ -14,6 +14,7 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
     .insert({ name, email, message });
 
   if (dbError) {
+    console.error('Database error:', dbError);
     res.status(500).json({ error: dbError.message });
     return;
   }
