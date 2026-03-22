@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Portfolio 2025 — Sanz
 
 A full-stack portfolio built with React + TypeScript (frontend) and Node.js + Express + TypeScript (backend), powered by Supabase.
@@ -45,42 +44,21 @@ Open http://localhost:5173
 
 ## Deploy
 
-- **Frontend** → Vercel: `cd frontend && vercel --prod`
-- **Backend**  → Render: connect repo, set env vars, build = `npm run build`, start = `npm start`
-=======
-# Portfolio 2025 — Sanny Sabio
+- **Frontend** → Vercel: Set `VITE_API_URL` env var to your Railway backend URL
+- **Backend** → Railway: Connected to this repo with auto-deploy
 
-## Quick Start
+## Environment Variables
 
-### Install
-```bash
-cd frontend && npm install
-cd ../backend && npm install
+**Vercel (Frontend)**
+```
+VITE_API_URL=https://your-railway-backend-url.railway.app
 ```
 
-### Configure backend/.env
+**Railway (Backend)**
 ```
 SUPABASE_URL=https://xxxx.supabase.co
 SUPABASE_SERVICE_KEY=your-service-key
-FRONTEND_URL=http://localhost:5173
+FRONTEND_URL=https://your-vercel-domain.vercel.app
+RESEND_API_KEY=your-resend-key
+YOUR_EMAIL=your-email@domain.com
 ```
-
-### Run
-```bash
-# Terminal 1
-cd backend && npm run dev
-
-# Terminal 2
-cd frontend && npm run dev
-```
-Open http://localhost:5173
-
-## Add your images
-- Portrait: `frontend/public/portrait.jpg`
-- Projects: `frontend/public/projects/p1.jpg` … `p9.jpg`
-- Previous portfolios: `frontend/public/prev-2023.jpg`, `prev-2024.jpg`
-
-## Deploy
-- Frontend → Vercel: `cd frontend && vercel --prod`
-- Backend  → Render: connect repo, build: `npm run build`, start: `node dist/index.js`
->>>>>>> main
