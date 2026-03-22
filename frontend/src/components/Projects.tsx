@@ -112,6 +112,10 @@ export default function Projects() {
             </div>
           ))}
         </div>
+          <p className="proj-add-hint reveal">
+          Drop images into <code>frontend/public/projects/</code> named <code>p1.jpg … p9.jpg</code> or videos like <code>v1.mp4, v9.mp4</code>
+        </p>
+      
       </div>
 
       {/* Lightbox */}
