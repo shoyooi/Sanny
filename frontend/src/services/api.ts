@@ -6,8 +6,8 @@ const api = axios.create({
 });
 
 export const fetchProjects = () =>
-  api.get<{ data: Project[] }>('/projects').then(r => r.data.data);
+  api.get<{ data: Project[] }>('/api/projects').then(r => r.data.data);
 
 export const sendMessage = (msg: Message) =>
-  api.post('/messages', msg).then(r => r.data);
+  api.post('/api/messages', msg).then(r => r.data);
 

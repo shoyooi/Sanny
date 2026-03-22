@@ -21,7 +21,7 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
   // 2. Send email via Resend
   try {
     await resend.emails.send({
-      from:    'Portfolio <onboarding@resend.dev>',
+      from:    `Portfolio <${process.env.YOUR_EMAIL || 'noreply@resend.dev'}>`,
       to:      process.env.YOUR_EMAIL!,
       subject: `📩 New message from ${name}`,
       html: `
