@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { Request, Response } from 'express';
-import { supabase } from '../config/supabase';
-
-export async function createMessage(req: Request, res: Response): Promise<void> {
-  const { error } = await supabase.from('messages').insert(req.body);
-  if (error) { res.status(500).json({ error: error.message }); return; }
-  res.status(201).json({ data: 'Message sent!' });
-}
-=======
 // backend/src/controllers/messagesController.ts
 import { Request, Response } from 'express';
 import { Resend } from 'resend';
@@ -18,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function createMessage(req: Request, res: Response): Promise<void> {
   const { name, email, message } = req.body;
 
-  // 1. Save to Supabase (same as before)
+  // 1. Save to Supabase
   const { error: dbError } = await supabase
     .from('messages')
     .insert({ name, email, message });
@@ -28,11 +18,11 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
     return;
   }
 
-  // 2. Send email notification to yourself via Resend
+  // 2. Send email via Resend
   try {
     await resend.emails.send({
-      from:    'Portfolio <onboarding@resend.dev>', // free default sender — no domain needed
-      to:      process.env.YOUR_EMAIL!,             // your Gmail in .env
+      from:    'Portfolio <onboarding@resend.dev>',
+      to:      process.env.YOUR_EMAIL!,
       subject: `📩 New message from ${name}`,
       html: `
         <div style="font-family:sans-serif;max-width:500px;margin:0 auto;">
@@ -47,10 +37,8 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
       `,
     });
   } catch (emailError) {
-    // Email failed but message was saved — still return success
     console.error('Email send failed:', emailError);
   }
 
   res.status(201).json({ data: 'Message sent!' });
 }
->>>>>>> main

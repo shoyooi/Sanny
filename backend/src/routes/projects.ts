@@ -1,11 +1,4 @@
 import { Router } from 'express';
-<<<<<<< HEAD
-import { getProjects, createProject } from '../controllers/projectsController';
-
-const router = Router();
-router.get('/',  getProjects);
-router.post('/', createProject);
-=======
 import { z } from 'zod';
 import { validate } from '../middleware/validate';
 import { authenticate } from '../middleware/auth';
@@ -29,5 +22,4 @@ const ProjectSchema = z.object({
 router.get('/', getProjects);
 router.post('/', authenticate, validate(ProjectSchema), createProject);
 
->>>>>>> main
 export default router;

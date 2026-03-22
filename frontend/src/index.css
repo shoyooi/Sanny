@@ -516,32 +516,6 @@ body::before {
 }
 .modal-link:hover { opacity: 0.75; }
 
-<<<<<<< HEAD
-/* ============================================
-   FOOTER
-============================================ */
-.footer {
-  position: relative; z-index: 2;
-  padding: 6rem 0 3rem; overflow: hidden;
-  border-top: 1px solid var(--border);
-}
-.footer-hero { text-align: center; margin-bottom: 4rem; }
-.footer-title {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 9rem);
-  letter-spacing: 0.05em; line-height: 0.9;
-  color: rgba(255,255,255,0.06); user-select: none;
-}
-.footer-title-over {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6rem);
-  letter-spacing: 0.1em; color: var(--text); margin-top: -0.6em; position: relative;
-}
-.footer-title-over span { color: var(--accent); }
-.footer-bottom {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem;
-=======
 
 /* ============================================
    PROJECT BADGE
@@ -757,7 +731,6 @@ body::before {
 .footer-bottom {
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 1rem;
->>>>>>> main
 }
 .footer-copy { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; color: var(--muted); }
 .footer-copy span { color: var(--accent); }
@@ -793,18 +766,6 @@ body::before {
   .hero-label { display: none; }
   .about-grid { grid-template-columns: 1fr; }
   .about-img-wrap { max-width: 260px; }
-<<<<<<< HEAD
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-wrap { grid-template-columns: 1fr; }
-  body { cursor: auto; }
-  .cursor-dot, .cursor-ring { display: none; }
-}
-@media (max-width: 580px) {
-  .projects-grid { grid-template-columns: 1fr 1fr; }
-  .info-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-}
-=======
   .contact-wrap { grid-template-columns: 1fr; }
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
@@ -826,4 +787,3 @@ body::before {
   .info-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
->>>>>>> main

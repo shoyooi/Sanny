@@ -1,30 +1,12 @@
-<<<<<<< HEAD
-export default function Footer() {
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-hero reveal">
-          <div className="footer-title">THANK YOU</div>
-          <div className="footer-title-over">2<span>0</span>26</div>
-        </div>
-        <div className="footer-bottom">
-          <div className="footer-copy">© 2026 <span>Sanny Sabio</span>. All rights reserved.</div>
-          <ul className="footer-links">
-            {['Top', 'About', 'Projects', 'Contact'].map(item => (
-              <li key={item}>
-                <a href={`#${item === 'Top' ? 'hero' : item.toLowerCase()}`}>{item}</a>
-              </li>
-            ))}
-          </ul>
-=======
 // frontend/src/components/Footer.tsx
 // ── Add previous portfolio covers to frontend/public/
 //    prev-2023.jpg  and  prev-2024.jpg
 
 const socials = [
-  { icon: '◎', platform: 'Instagram', handle: '@sannyx13 ',  href: 'https://instagram.com/sannyx13'  },
-  { icon: '♪', platform: 'TikTok',    handle: '@urmrshuzo_',  href: 'https://tiktok.com/@urmrshuzo_'    },
-  { icon: 'F', platform: 'Facebook',   handle: 'Sanny Sabio', href: 'https://facebook.com/sannysabio13'  },
+  { icon: '◎', platform: 'Instagram', handle: '@yp2588',  href: 'https://instagram.com/yp2588'  },
+  { icon: '♪', platform: 'TikTok',    handle: '@yp2588',  href: 'https://tiktok.com/@yp2588'    },
+  { icon: '▶', platform: 'YouTube',   handle: 'Yudha XD', href: 'https://youtube.com/@yudhaxd'  },
+  { icon: '⊕', platform: 'Pinterest', handle: '@kyzsee',  href: 'https://pinterest.com/kyzsee'  },
 ];
 
 const prevPortfolios = [
@@ -68,8 +50,8 @@ export default function Footer() {
             {/* Right — THANK YOU */}
             <div className="closing-right reveal reveal-delay-2">
               <div className="thankyou-text">
-                <span className="thankyou-main">THANK YOU!</span>
-                <span className="thankyou-year">FOR INQUIRY</span>
+                <span className="thankyou-main">THANK YOU</span>
+                <span className="thankyou-year">2025</span>
               </div>
               <div className="film-strip">
                 {[...Array(8)].map((_, i) => <div key={i} className="film-hole" />)}
@@ -127,7 +109,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
->>>>>>> main
         </div>
       </div>
     </footer>
