@@ -3,11 +3,10 @@ import { Request, Response } from 'express';
 import { Resend } from 'resend';
 import { supabase } from '../config/supabase';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function createMessage(req: Request, res: Response): Promise<void> {
   try {
     const { name, email, message } = req.body;
+    console.log('Received message from:', name);
 
     // 1. Save to Supabase
     const { error: dbError } = await supabase
@@ -20,12 +19,15 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
       return;
     }
 
+    console.log('Message saved to database');
+
     // 2. Send email via Resend (optional, non-blocking)
     const yourEmail = process.env.YOUR_EMAIL;
     const resendKey = process.env.RESEND_API_KEY;
     
     if (yourEmail && resendKey) {
       try {
+        const resend = new Resend(resendKey);
         await resend.emails.send({
           from:    `Portfolio <${process.env.RESEND_FROM_EMAIL || 'noreply@resend.dev'}>`,
           to:      yourEmail,
@@ -42,6 +44,7 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
             </div>
           `,
         });
+        console.log('Email sent successfully');
       } catch (emailError) {
         console.error('Email send failed:', emailError);
         // Non-blocking: continue even if email fails
