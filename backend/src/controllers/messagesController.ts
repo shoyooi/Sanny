@@ -28,8 +28,10 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
     if (yourEmail && resendKey) {
       try {
         const resend = new Resend(resendKey);
-        await resend.emails.send({
-          from:    `Portfolio <${process.env.RESEND_FROM_EMAIL || 'noreply@resend.dev'}>`,
+        console.log('Attempting to send email to:', yourEmail);
+        
+        const emailResponse = await resend.emails.send({
+          from:    'noreply@resend.dev',
           to:      yourEmail,
           subject: `📩 New message from ${name}`,
           html: `
@@ -44,10 +46,14 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
             </div>
           `,
         });
-        console.log('Email sent successfully');
-      } catch (emailError) {
-        console.error('Email send failed:', emailError);
-        // Non-blocking: continue even if email fails
+        
+        if (emailResponse.error) {
+          console.error('Resend API error:', emailResponse.error);
+        } else {
+          console.log('Email sent successfully, ID:', emailResponse.data?.id);
+        }
+      } catch (emailError: any) {
+        console.error('Email send exception:', emailError?.message || emailError);
       }
     } else {
       console.warn('Email service not configured (missing YOUR_EMAIL or RESEND_API_KEY)');
