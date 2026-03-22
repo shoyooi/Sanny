@@ -49,8 +49,8 @@ export default function Footer() {
             {/* Right — THANK YOU */}
             <div className="closing-right reveal reveal-delay-2">
               <div className="thankyou-text">
-                <span className="thankyou-main">THANK YOU</span>
-                <span className="thankyou-year">2025</span>
+                <span className="thankyou-main">THANK YOU!</span>
+                <span className="thankyou-year">FOR INQUIRY</span>
               </div>
               <div className="film-strip">
                 {[...Array(8)].map((_, i) => <div key={i} className="film-hole" />)}
