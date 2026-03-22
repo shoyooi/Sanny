@@ -16,7 +16,7 @@ const PROJECT_DATA: Project[] = [
   { id: 1, type: 'image', src: '/projects/p1.jpg', category: 'graphic', span: 'tall'   },
   { id: 2, type: 'image', src: '/projects/p2.jpg', category: 'graphic', span: 'normal' },
   { id: 3, type: 'image', src: '/projects/p3.jpg', category: 'graphic', span: 'normal' },
-  { id: 4, type: 'image', src: '/projects/p4.jpg', category: 'video',   span: 'normal' },
+  { id: 4, type: 'video', src: '/projects/v4.mp4', category: 'video',   span: 'normal' },
   { id: 5, type: 'video', src: '/projects/v5.mp4', category: 'video',   span: 'wide'   },
   { id: 6, type: 'image', src: '/projects/p6.jpg', category: 'graphic', span: 'normal' },
   { id: 7, type: 'image', src: '/projects/p7.jpg', category: 'logo',    span: 'normal' },
@@ -113,10 +113,6 @@ export default function Projects() {
             </div>
           ))}
         </div>
-
-        <p className="proj-add-hint reveal">
-          Drop images into <code>frontend/public/projects/</code> named <code>p1.jpg … p9.jpg</code> or videos like <code>v1.mp4, v9.mp4</code>
-        </p>
       </div>
 
       {/* Lightbox */}

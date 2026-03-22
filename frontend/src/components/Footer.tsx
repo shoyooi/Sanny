@@ -3,10 +3,9 @@
 //    prev-2023.jpg  and  prev-2024.jpg
 
 const socials = [
-  { icon: '◎', platform: 'Instagram', handle: '@yp2588',  href: 'https://instagram.com/yp2588'  },
-  { icon: '♪', platform: 'TikTok',    handle: '@yp2588',  href: 'https://tiktok.com/@yp2588'    },
-  { icon: '▶', platform: 'YouTube',   handle: 'Yudha XD', href: 'https://youtube.com/@yudhaxd'  },
-  { icon: '⊕', platform: 'Pinterest', handle: '@kyzsee',  href: 'https://pinterest.com/kyzsee'  },
+  { icon: '◎', platform: 'Instagram', handle: '@sannyx13 ',  href: 'https://instagram.com/sannyx13'  },
+  { icon: '♪', platform: 'TikTok',    handle: '@urmrshuzo_',  href: 'https://tiktok.com/@urmrshuzo_'    },
+  { icon: 'F', platform: 'Facebook',   handle: 'Sanny Sabio', href: 'https://facebook.com/sannysabio13'  },
 ];
 
 const prevPortfolios = [
@@ -50,8 +49,8 @@ export default function Footer() {
             {/* Right — THANK YOU */}
             <div className="closing-right reveal reveal-delay-2">
               <div className="thankyou-text">
-                <span className="thankyou-main">THANK YOU</span>
-                <span className="thankyou-year">2025</span>
+                <span className="thankyou-main">THANK YOU!</span>
+                <span className="thankyou-year">FOR INQUIRY</span>
               </div>
               <div className="film-strip">
                 {[...Array(8)].map((_, i) => <div key={i} className="film-hole" />)}
