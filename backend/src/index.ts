@@ -9,7 +9,17 @@ dotenv.config();
 const app  = express();
 const PORT = process.env.PORT ?? 4000;
 
-app.use(cors({ origin: process.env.FRONTEND_URL ?? 'http://localhost:5173' }));
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:5173',
+  'http://localhost:3000',
+  /vercel\.app$/, // Allow all Vercel deployments
+].filter(Boolean);
+
+app.use(cors({ 
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api/projects', projectsRouter);
