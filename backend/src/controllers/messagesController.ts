@@ -1,7 +1,18 @@
 // backend/src/controllers/messagesController.ts
 import { Request, Response } from 'express';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { supabase } from '../config/supabase';
+
+// Configure Gmail transporter
+const createTransporter = () => {
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
+};
 
 export async function createMessage(req: Request, res: Response): Promise<void> {
   try {
@@ -21,18 +32,20 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
 
     console.log('Message saved to database');
 
-    // 2. Send email via Resend (optional, non-blocking)
+    // 2. Send email via Gmail SMTP (optional, non-blocking)
+    const gmailUser = process.env.GMAIL_USER;
+    const gmailPassword = process.env.GMAIL_APP_PASSWORD;
     const yourEmail = process.env.YOUR_EMAIL;
-    const resendKey = process.env.RESEND_API_KEY;
     
-    if (yourEmail && resendKey) {
+    if (gmailUser && gmailPassword && yourEmail) {
       try {
-        const resend = new Resend(resendKey);
+        const transporter = createTransporter();
+        
         console.log('Attempting to send email to:', yourEmail);
         
-        const emailResponse = await resend.emails.send({
-          from:    'noreply@resend.dev',
-          to:      yourEmail,
+        const mailOptions = {
+          from: gmailUser,
+          to: yourEmail,
           subject: `📩 New message from ${name}`,
           html: `
             <div style="font-family:sans-serif;max-width:500px;margin:0 auto;">
@@ -45,18 +58,16 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
               </p>
             </div>
           `,
-        });
+        };
         
-        if (emailResponse.error) {
-          console.error('Resend API error:', emailResponse.error);
-        } else {
-          console.log('Email sent successfully, ID:', emailResponse.data?.id);
-        }
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully, ID:', info.messageId);
+        
       } catch (emailError: any) {
         console.error('Email send exception:', emailError?.message || emailError);
       }
     } else {
-      console.warn('Email service not configured (missing YOUR_EMAIL or RESEND_API_KEY)');
+      console.warn('Email service not configured (missing GMAIL_USER, GMAIL_APP_PASSWORD, or YOUR_EMAIL)');
     }
 
     res.status(201).json({ data: 'Message sent!' });
