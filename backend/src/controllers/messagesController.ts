@@ -35,7 +35,7 @@ export async function createMessage(req: Request, res: Response): Promise<void> 
             'Authorization': `Bearer ${resendApiKey}`,
           },
           body: JSON.stringify({
-            from: 'noreply@sanzportfolio.com',
+            from: 'onboarding@resend.dev',
             to: yourEmail,
             subject: `📩 New message from ${name}`,
             html: `
