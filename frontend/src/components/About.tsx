@@ -17,7 +17,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-img-wrap reveal">
             {/* Replace /portrait-about.jpg with your actual photo */}
-            <img src="/portrait-new.jpg" alt="Sanny" className="about-img" />
+            <img src="/portrait-new.jpg?t=20260323-final" alt="Sanny" className="about-img" />
             <div className="about-img-caption">Sanny Sabio· ID</div>
           </div>
 

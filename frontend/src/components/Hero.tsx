@@ -27,7 +27,7 @@ export default function Hero() {
             <div className="hero-corner-tl" />
             <div className="hero-img-inner">
               {/* Replace /portrait-new.jpg with your actual photo */}
-              <img src="/portrait-new.jpg" alt="Sanny" />
+              <img src="/portrait-new.jpg?t=20260323-final" alt="Sanny" />
             </div>
             <span className="hero-label">Sanny Sabio · 2026</span>
           </div>
