@@ -25,7 +25,7 @@ export default function Footer() {
             {/* Left — avatar + socials */}
             <div className="closing-left reveal">
               <div className="closing-avatar-wrap">
-                <img src="/portrait.jpg?v=99" alt="Sanz" className="closing-avatar" />
+                <img src="/portrait-new.jpg" alt="Sanz" className="closing-avatar" />
               </div>
               <p className="closing-name">
                 SANNY SABIO<br /><span>Content Creator</span>
