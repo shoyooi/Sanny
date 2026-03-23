@@ -26,8 +26,8 @@ export default function Hero() {
             <div className="hero-corner" />
             <div className="hero-corner-tl" />
             <div className="hero-img-inner">
-              {/* Replace /portrait.jpg with your actual photo */}
-              <img src="/portrait.jpg" alt="Sanny" />
+              {/* Replace /portrait-new.jpg with your actual photo */}
+              <img src="/portrait-new.jpg" alt="Sanny" />
             </div>
             <span className="hero-label">Sanny Sabio · 2026</span>
           </div>
