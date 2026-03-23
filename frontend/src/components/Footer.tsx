@@ -3,10 +3,9 @@
 //    prev-2023.jpg  and  prev-2024.jpg
 
 const socials = [
-  { icon: '◎', platform: 'Instagram', handle: '@yp2588',  href: 'https://instagram.com/yp2588'  },
-  { icon: '♪', platform: 'TikTok',    handle: '@yp2588',  href: 'https://tiktok.com/@yp2588'    },
-  { icon: '▶', platform: 'YouTube',   handle: 'Yudha XD',  href: 'https://youtube.com/@YudhaXD'  },
-  { icon: 'ⓟ', platform: 'Pinterest', handle: '@kyzsee',  href: 'https://pinterest.com/kyzsee'  },
+  { icon: 'I', platform: 'Instagram', handle: '@sannyx13',    href: 'https://instagram.com/sannyx13'    },
+  { icon: 'T', platform: 'TikTok',    handle: '@urmanshuzo_', href: 'https://tiktok.com/@urmanshuzo_'   },
+  { icon: 'F', platform: 'Facebook',  handle: '@Sanny Sabio', href: 'https://facebook.com/Sanny.Sabio'  },
 ];
 
 const prevPortfolios = [

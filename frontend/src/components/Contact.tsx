@@ -3,10 +3,9 @@ import { sendMessage } from '../services/api';
 import type { Message } from '../types';
 
 const socials = [
-  { platform: 'Instagram', handle: '@yp2588',  href: 'https://instagram.com/yp2588'  },
-  { platform: 'TikTok',    handle: '@yp2588',  href: 'https://tiktok.com/@yp2588'    },
-  { platform: 'YouTube',   handle: 'Yudha XD',  href: 'https://youtube.com/@YudhaXD'  },
-  { platform: 'Pinterest', handle: '@kyzsee',  href: 'https://pinterest.com/kyzsee'  },
+  { platform: 'Instagram', handle: '@sannyx13',    href: 'https://instagram.com/sannyx13'    },
+  { platform: 'TikTok',    handle: '@urmanshuzo_', href: 'https://tiktok.com/@urmanshuzo_'   },
+  { platform: 'Facebook',  handle: '@Sanny Sabio', href: 'https://facebook.com/Sanny.Sabio'  },
 ];
 
 export default function Contact() {
