@@ -6,6 +6,7 @@
     <main>
         @include('partials.hero')
         @include('partials.about')
+        @include('partials.recognitions')
         @include('partials.projects')
         @include('partials.contact')
     </main>

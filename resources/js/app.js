@@ -133,7 +133,50 @@ function initProjectsFilter() {
 }
 
 function initLightbox() {
-    // Lightbox removed in favor of dedicated case study pages
+    const certCells = document.querySelectorAll('.cert-cell');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    if (!lightbox || !lightboxContent || !lightboxClose) return;
+
+    certCells.forEach(cell => {
+        cell.addEventListener('click', () => {
+            const src = cell.getAttribute('data-src');
+            if (!src) return;
+
+            lightboxContent.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Certificate preview';
+            img.className = 'lightbox-img';
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90vh';
+            img.style.objectFit = 'contain';
+            lightboxContent.appendChild(img);
+
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightboxContent.innerHTML = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            lightboxContent.innerHTML = '';
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            lightbox.style.display = 'none';
+            lightboxContent.innerHTML = '';
+        }
+    });
 }
 
 function initPreloader() {

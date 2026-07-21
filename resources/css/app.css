@@ -1117,3 +1117,131 @@ body::before {
   color: var(--text);
   font-weight: 500;
 }
+
+/* ============================================
+   RECOGNITIONS SECTION
+============================================ */
+.recognitions-section {
+  padding: 100px 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+.recog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recog-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.recog-desc {
+  font-size: 1.1rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.marquee-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  overflow: hidden;
+  padding: 2rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.cert-card {
+  width: 280px;
+  background: transparent;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  padding: 2rem;
+  transition: border-color 0.3s;
+}
+
+.cert-card:hover .cert-img-wrapper {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cert-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.8);
+  transition: filter 0.3s;
+}
+
+.cert-card:hover .cert-img-wrapper img {
+  filter: grayscale(0%) opacity(1);
+}
+
+.cert-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.cert-org {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
