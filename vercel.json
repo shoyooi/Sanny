@@ -37,6 +37,7 @@
         }
     ],
     "env": {
+        "APP_NAME": "Portfolio 2026 - Sanz",
         "APP_KEY": "base64:jUUC/KPfSWBgToeTO3YyjI3RJRpPib7g9BZ050UhD40=",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
