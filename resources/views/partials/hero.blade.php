@@ -4,7 +4,7 @@
 
     <div class="hero-content">
         <div class="hero-left">
-            <div class="hero-tag">Content Creator &amp; Designer</div>
+            <div class="hero-tag">FBA/ VIDEO EDITOR &amp; DEVELOPER</div>
             <h1 class="hero-title">
                 Portfolio
             </h1>
