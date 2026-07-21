@@ -1151,10 +1151,7 @@ body::before {
 }
 
 .marquee-container {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
   display: flex;
   overflow: hidden;
   padding: 2rem 0;
