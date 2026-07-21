@@ -6,7 +6,7 @@
         <div class="hero-left">
             <div class="hero-tag">Content Creator &amp; Designer</div>
             <h1 class="hero-title">
-                Portfolio<span class="year">2026</span>
+                Portfolio
             </h1>
             <p class="hero-sub">
                 Hi, I'm Sanny Sabio — graphic designer,<br />
@@ -26,7 +26,7 @@
                 <div class="hero-img-inner">
                     <img src="{{ asset('portrait-new.jpg') }}?t=20260323-final" alt="Sanny" />
                 </div>
-                <span class="hero-label">Sanny Sabio · 2026</span>
+                <span class="hero-label">Sanny Sabio</span>
             </div>
         </div>
     </div>

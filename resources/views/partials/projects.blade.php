@@ -3,7 +3,7 @@
         <!-- Header -->
         <div class="section-header reveal">
             <span class="section-num">02</span>
-            <h2 class="section-title">Recap Project 2025</h2>
+            <h2 class="section-title">Projects</h2>
             <span class="proj-badge">NO AI</span>
             <div class="section-line"></div>
         </div>
