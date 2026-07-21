@@ -133,54 +133,29 @@ function initProjectsFilter() {
 }
 
 function initLightbox() {
-    const projectCells = document.querySelectorAll('.proj-cell');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxContent = document.getElementById('lightbox-content');
-    const lightboxClose = document.getElementById('lightbox-close');
+    // Lightbox removed in favor of dedicated case study pages
+}
 
-    if (!lightbox || !lightboxContent || !lightboxClose) return;
+function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    if (!preloader) return;
 
-    projectCells.forEach(cell => {
-        cell.addEventListener('click', () => {
-            const src = cell.getAttribute('data-src');
-            const type = cell.getAttribute('data-type');
-            
-            if (!src) return;
+    // Minimum display time for the preloader (e.g., 800ms) to ensure it's seen
+    const minTime = 800;
+    const startTime = Date.now();
 
-            lightboxContent.innerHTML = '';
-            if (type === 'image') {
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = 'Project preview';
-                img.className = 'lightbox-img';
-                lightboxContent.appendChild(img);
-            } else if (type === 'video') {
-                const video = document.createElement('video');
-                video.src = src;
-                video.className = 'lightbox-img';
-                video.controls = true;
-                video.autoplay = true;
-                lightboxContent.appendChild(video);
-            }
+    window.addEventListener('load', () => {
+        const elapsedTime = Date.now() - startTime;
+        const remainingTime = Math.max(0, minTime - elapsedTime);
 
-            lightbox.style.display = 'flex';
-        });
-    });
-
-    lightboxClose.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-        lightboxContent.innerHTML = ''; // Stop video playback
-    });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = 'none';
-            lightboxContent.innerHTML = '';
-        }
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+        }, remainingTime);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    initPreloader();
     initRevealObserver();
     initCursor();
     initNavbar();

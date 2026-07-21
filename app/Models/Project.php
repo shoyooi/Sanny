@@ -8,6 +8,7 @@ class Project extends Model
 {
     protected $fillable = [
         'title',
+        'slug',
         'description',
         'image_url',
         'video_url',
@@ -15,5 +16,8 @@ class Project extends Model
         'category',
         'span',
         'year',
+        'software_used',
+        'duration',
+        'client_name',
     ];
 }
